@@ -37,7 +37,7 @@ Three VMs on an isolated host-only virtual network:
 | VM | OS | Role | IP Address |
 |---|---|---|---|
 | VM1 | Kali Linux | Attacker / traffic generator | `192.168.115.128` |
-| VM2 | Windows 11 ARM | Victim / web server | `192.168.115.130` |
+| VM2 | Windows 11 | Victim / web server | `192.168.115.130` |
 | VM3 | Ubuntu Desktop | Monitoring / detection / analysis | `192.168.115.129` |
 
 ```
@@ -45,7 +45,7 @@ Three VMs on an isolated host-only virtual network:
                                 │
           ┌─────────────────────┼─────────────────────┐
           │                     │                     │
-     Kali Linux           Windows 11 ARM         Ubuntu Desktop
+     Kali Linux           Windows 11          Ubuntu Desktop
   192.168.115.128        192.168.115.130        192.168.115.129
       Attacker                Victim               Monitoring
 ```
@@ -59,10 +59,9 @@ Three VMs on an isolated host-only virtual network:
 | **DDoSify** | Controlled HTTP flood generator |
 | `tcpdump` | Packet capture on the monitoring VM |
 | Wireshark | Traffic analysis of the `.pcap` |
-| **Suricata** | Network IDS used for detection (substituted for Snort) |
-| Windows Firewall / PowerShell (`New-NetFirewallRule`) | Mitigation — blocks the attacker's IP |
+| **Suricata** | Network IDS used for detection|
+| Windows Firewall / PowerShell | Mitigation |
 
-> The lab guide suggested **Snort** as the IDS; **Suricata** was used instead to perform the same role (rule-based detection with alerting), since fail2ban and Snort are not native to the Windows victim / Ubuntu Desktop pairing used here.
 
 ---
 
