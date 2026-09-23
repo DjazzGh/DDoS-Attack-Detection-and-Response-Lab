@@ -102,6 +102,8 @@ sudo tcpdump -i enp2s0 -w DDosAttack.pcap
 
 ## 4. Simulating the HTTP Flood
 
+**DDoSify** is an open-source, high-performance load testing tool that can send a large volume of HTTP requests to a target at a controlled rate and duration. It's built for load testing, but the same capability — many requests, fired fast, from one source is exactly what an HTTP flood attack looks like, which makes it a convenient way to simulate one safely in this lab.
+
 DDoSify sends a controlled burst of HTTP requests from Kali to the victim:
 
 ```bash
