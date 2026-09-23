@@ -1,8 +1,6 @@
-# Project 4: DDoS Attack Detection and Response — Windows 11 ARM Victim
+# DDoS Attack Detection and Response Lab
 
 An isolated home-lab exercise simulating an **HTTP flooding (DDoS) attack**, capturing and analyzing the resulting traffic, detecting it with an IDS, and mitigating it with the Windows Firewall.
-
-> Variant of the classic Project 4 lab: the victim is **Windows 11 ARM** instead of Ubuntu Server, so detection stays on Linux while the response is demonstrated through **Windows Firewall** instead of fail2ban.
 
 ## Table of Contents
 
