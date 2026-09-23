@@ -17,7 +17,6 @@ An isolated home-lab exercise simulating an **HTTP flooding (DDoS) attack**, cap
 - [8. Mitigation With Windows Firewall](#8-mitigation-with-windows-firewall)
 - [9. Verifying the Mitigation](#9-verifying-the-mitigation)
 - [Results](#results)
-- [Limitations](#limitations)
 - [Conclusion](#conclusion)
 
 ## Objectives
@@ -214,12 +213,6 @@ A repeat of the DDoSify flood also fails to reach the server once the rule is in
 | Windows Firewall rule | Not present | `LAB - Block DDoS Attacker` — Enabled, Inbound, Block |
 | Web server availability (to attacker) | Available | Unavailable |
 
-## Limitations
-
-- Single attacker machine — not a real distributed (multi-source) DDoS.
-- Fully controlled, isolated lab environment; no real-world network noise.
-- Mitigation blocks a single known IP address, which does not scale to an attack from many sources.
-- The exercise simulates **HTTP flooding**, not a true distributed denial-of-service attack.
 
 ## Conclusion
 
