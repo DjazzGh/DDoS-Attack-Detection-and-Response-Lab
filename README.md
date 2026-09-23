@@ -1,4 +1,4 @@
-# DDoS Attack Detection and Response Lab
+# DDoS Detection & Mitigation Lab
 
 An isolated home-lab exercise simulating an **HTTP flooding (DDoS) attack**, capturing and analyzing the resulting traffic, detecting it with an IDS, and mitigating it with the Windows Firewall.
 
@@ -137,6 +137,8 @@ The capture is opened and inspected in Wireshark on Ubuntu.
 
 ## 7. Detection With Suricata
 
+**Suricata** is an open-source Network Intrusion Detection and Prevention System (IDS/IPS). It inspects live traffic against a set of signatures/rules and can log matches, raise alerts, or drop traffic outright depending on the mode it's run in. Here it's used in IDS mode — reading traffic on the monitoring interface and generating an alert whenever a source exceeds the request threshold defined in the custom rule below.
+
 A custom local rule is added to detect a high rate of SYN/connection attempts from a single source toward the victim's web port:
 
 ```
@@ -206,6 +208,17 @@ curl --connect-timeout 5 http://192.168.115.130:8000
 A repeat of the DDoSify flood also fails to reach the server once the rule is in place, confirming the mitigation holds under sustained traffic, not just a single request.
 
 ![curl request timing out after the firewall rule is applied](images/18-curl-blocked-after-mitigation.png)
+
+A repeat of the full DDoSify flood also fails to reach the server once the rule is in place, confirming the mitigation holds under sustained traffic, not just a single request. All 1000 requests fail with `connection timeout`:
+ 
+```
+Success Count:   0     (0%)
+Failed Count:    1000  (100%)
+Server Error Distribution (Count:Reason): 1000 : connection timeout
+Test Status : Success
+```
+ 
+![DDoSify flood failing against the victim after the firewall rule is applied](images/19-ddos-blocked-after-mitigation.png)
 
 ## Results
 
