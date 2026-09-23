@@ -2,6 +2,10 @@
 
 An isolated home-lab exercise simulating an **HTTP flooding (DDoS) attack**, capturing and analyzing the resulting traffic, detecting it with an IDS, and mitigating it with the Windows Firewall.
 
+## What Is a DDoS Attack?
+ 
+A **Distributed Denial of Service (DDoS)** attack attempts to overwhelm a network, service, or server with a flood of traffic — often from many sources at once — so it can no longer respond to legitimate users. **HTTP flooding** is a common application-layer variant: the attacker sends a large volume of seemingly valid HTTP requests to exhaust the target's connections, CPU, or bandwidth. This lab simulates that behavior in a single-attacker, controlled environment to practice detecting and responding to it, rather than launching a real multi-source distributed attack.
+
 ## Table of Contents
 
 - [Objectives](#objectives)
